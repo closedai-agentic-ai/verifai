@@ -1,0 +1,59 @@
+{
+  "name": "verifai",
+  "version": "1.0.0",
+  "description": "VerifAI: AI-Powered Mobile Sanity Testing Agent for Android applications",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "nodemon src/index.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "keywords": [
+    "verifai",
+    "mobile-testing",
+    "android",
+    "automation",
+    "ai",
+    "mcp",
+    "jira",
+    "aws-bedrock"
+  ],
+  "author": "AWS Hackathon Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.0",
+    "typescript": "^5.0.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.0.0",
+    "winston": "^3.8.0",
+    "joi": "^17.9.0",
+    "axios": "^1.4.0",
+    "uuid": "^9.0.0",
+    "cors": "^2.8.5",
+    "helmet": "^7.0.0",
+    "dotenv": "^16.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/express": "^4.17.0",
+    "@types/cors": "^2.8.0",
+    "@types/uuid": "^9.0.0",
+    "@types/jest": "^29.5.0",
+    "jest": "^29.0.0",
+    "ts-jest": "^29.1.0",
+    "nodemon": "^3.0.0",
+    "ts-node": "^10.9.0",
+    "eslint": "^8.45.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "prettier": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
