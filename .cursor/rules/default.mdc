@@ -25,20 +25,28 @@ alwaysApply: true
    - Fix any failing tests before proceeding
    - Verify TypeScript compilation with `npm run build`
    - Check linting with `npm run lint`
+   - Fix all linting errors before review
 
-4. **Request Review**
-   - Ask user to verify the changes for the completed sub-task
+4. **MANDATORY: Request User Review**
+   - **ALWAYS** ask user to review the changes for the completed sub-task
    - Provide clear summary of what was implemented
-   - Wait for user approval before proceeding
+   - Show code changes and test results
+   - **NEVER** proceed without explicit user approval
+   - **WAIT** for user feedback and address any concerns
 
-5. **Commit Changes**
-   - After user approval, suggest committing the changes
-   - If user agrees, create descriptive commit message
+5. **Request Commit Permission**
+   - **ONLY** after user approves the implementation
+   - Ask explicitly: "Should I commit these changes?"
+   - **WAIT** for user confirmation before committing
+   - **NEVER** commit without explicit user permission
+
+6. **Commit Changes**
+   - After user gives commit approval, create descriptive commit message
    - Use conventional commit format: `feat(component): description`
-   - Push changes to repository
+   - Push changes to repository if user requests
 
-6. **Proceed to Next Task**
-   - Only move to next task after current one is fully complete
+7. **Proceed to Next Task**
+   - Only move to next task after current one is fully complete and committed
    - Update tasks.md to reflect progress
 
 ## Code Quality Standards
@@ -130,11 +138,19 @@ alwaysApply: true
 - Use streaming for large data processing
 - Implement proper timeout handling
 
-## Never Do
+## CRITICAL: Never Do
+- **NEVER** commit code without explicit user approval
+- **NEVER** proceed to next task without user review and approval
 - Commit code that doesn't compile
 - Skip writing tests for new functionality
 - Use console.log for production logging
 - Hardcode configuration values
 - Ignore linting errors
-- Proceed to next task without user approval
-- Make breaking changes without discussion 
+- Make breaking changes without discussion
+
+## Review Process Requirements
+- **ALWAYS** show user what was implemented
+- **ALWAYS** run tests and show results
+- **ALWAYS** fix linting errors before review
+- **ALWAYS** wait for user approval before committing
+- **ALWAYS** ask permission before committing changes 
