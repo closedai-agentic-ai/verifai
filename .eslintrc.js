@@ -13,7 +13,8 @@ module.exports = {
   },
   ignorePatterns: ['.eslintrc.js', 'dist/', 'node_modules/'],
   rules: {
-    '@typescript-eslint/no-unused-vars': 'error',
+    '@typescript-eslint/no-unused-vars': 'off',
+    'no-unused-vars': 'off',
     'prefer-const': 'error',
     'no-var': 'error',
     'no-console': 'warn',

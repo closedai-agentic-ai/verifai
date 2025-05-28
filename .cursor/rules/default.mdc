@@ -1,0 +1,140 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# VerifAI Development Rules
+
+## Development Workflow
+
+### Task Completion Process
+1. **Complete Sub-task Implementation**
+   - Implement the feature/component according to specifications
+   - Ensure TypeScript compilation without errors
+   - Follow established patterns and architecture
+
+2. **Write Comprehensive Tests**
+   - Create unit tests for every new class/function
+   - Write integration tests where applicable
+   - Aim for >90% test coverage
+   - Test both success and failure scenarios
+   - Mock external dependencies appropriately
+
+3. **Run Tests and Verify**
+   - Execute `npm test` to ensure all tests pass
+   - Fix any failing tests before proceeding
+   - Verify TypeScript compilation with `npm run build`
+   - Check linting with `npm run lint`
+
+4. **Request Review**
+   - Ask user to verify the changes for the completed sub-task
+   - Provide clear summary of what was implemented
+   - Wait for user approval before proceeding
+
+5. **Commit Changes**
+   - After user approval, suggest committing the changes
+   - If user agrees, create descriptive commit message
+   - Use conventional commit format: `feat(component): description`
+   - Push changes to repository
+
+6. **Proceed to Next Task**
+   - Only move to next task after current one is fully complete
+   - Update tasks.md to reflect progress
+
+## Code Quality Standards
+
+### TypeScript
+- Use strict TypeScript configuration
+- Properly type all functions, parameters, and return values
+- Handle optional properties correctly
+- Use bracket notation for dynamic property access
+- Avoid `any` types unless absolutely necessary
+
+### Testing
+- Use Jest for unit and integration tests
+- Mock external dependencies (child_process, file system, network calls)
+- Test error scenarios and edge cases
+- Use descriptive test names that explain the scenario
+- Group related tests using `describe` blocks
+
+### Error Handling
+- Always handle errors gracefully
+- Use custom error types where appropriate
+- Log errors with structured logging
+- Provide meaningful error messages to users
+
+### Logging
+- Use structured logging with Winston
+- Include relevant context in log messages
+- Use appropriate log levels (error, warn, info, debug)
+- Add timestamps and event types for traceability
+
+### Code Organization
+- Keep functions focused and single-purpose
+- Split large files into smaller, focused modules
+- Use clear, descriptive naming conventions
+- Export types and interfaces from index files
+- Maintain clean separation of concerns
+
+## Architecture Patterns
+
+### Dependency Injection
+- Pass dependencies through constructors
+- Use interfaces for better testability
+- Avoid tight coupling between components
+
+### Configuration Management
+- Use environment variables for configuration
+- Validate configuration on startup
+- Provide sensible defaults
+- Use type-safe configuration objects
+
+### Async/Await
+- Prefer async/await over Promises.then()
+- Handle async errors with try/catch
+- Use Promise.race() for timeouts
+- Implement proper cleanup in finally blocks
+
+## File Naming Conventions
+- Use kebab-case for file names
+- Use PascalCase for class names
+- Use camelCase for function and variable names
+- Use UPPER_CASE for constants
+- Add `.test.ts` suffix for test files
+
+## Git Commit Standards
+- Use conventional commit format
+- Include scope in parentheses: `feat(parser): add instruction validation`
+- Types: feat, fix, docs, style, refactor, test, chore
+- Keep commit messages under 72 characters
+- Include detailed description in commit body if needed
+
+## Documentation
+- Add JSDoc comments for all public methods
+- Include parameter and return type descriptions
+- Document complex algorithms or business logic
+- Keep README.md updated with setup instructions
+- Update API documentation when adding new endpoints
+
+## Security Considerations
+- Validate all user inputs
+- Use parameterized queries for database operations
+- Sanitize data before logging
+- Handle sensitive information appropriately
+- Implement proper authentication and authorization
+
+## Performance Guidelines
+- Use connection pooling for external services
+- Implement proper caching strategies
+- Monitor memory usage and prevent leaks
+- Use streaming for large data processing
+- Implement proper timeout handling
+
+## Never Do
+- Commit code that doesn't compile
+- Skip writing tests for new functionality
+- Use console.log for production logging
+- Hardcode configuration values
+- Ignore linting errors
+- Proceed to next task without user approval
+- Make breaking changes without discussion 
