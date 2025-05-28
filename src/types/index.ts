@@ -174,19 +174,22 @@ export interface TestResult {
  * Android device information
  */
 export interface DeviceInfo {
-  deviceId: string;
-  name: string;
-  platform: 'android' | 'ios';
-  platformVersion: string;
+  id: string;
+  deviceId?: string; // Legacy support
+  name?: string;
+  platform?: 'android' | 'ios';
+  platformVersion?: string;
   manufacturer?: string;
   model?: string;
-  screenSize: {
+  androidVersion?: string;
+  apiLevel?: number;
+  screenSize?: {
     width: number;
     height: number;
   };
-  density: number;
+  density?: number;
   isEmulator: boolean;
-  status: 'available' | 'busy' | 'offline';
+  status?: 'available' | 'busy' | 'offline';
 }
 
 /**
@@ -209,15 +212,20 @@ export interface ApkInfo {
  * Emulator configuration
  */
 export interface EmulatorConfig {
-  name: string;
-  apiLevel: number;
-  target: string;
-  abi: string;
-  device: string;
+  name?: string;
+  apiLevel?: number;
+  target?: string;
+  abi?: string;
+  device?: string;
   sdcardSize?: string;
   ramSize?: string;
   heapSize?: string;
   additionalOptions?: string[];
+  // EmulatorManager specific properties
+  androidSdkPath?: string;
+  emulatorName?: string;
+  deviceTimeout?: number;
+  bootTimeout?: number;
 }
 
 // =============================================================================
